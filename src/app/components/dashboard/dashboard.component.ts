@@ -1,20 +1,6 @@
 import { Component } from '@angular/core';
 import { EChartsOption } from 'echarts';
-import * as echarts from 'echarts';
-
-function getVirtualData(year: string) {
-  const date = +echarts.time.parse(year + '-01-01');
-  const end = +echarts.time.parse(+year + 1 + '-01-01');
-  const dayTime = 3600 * 24 * 1000;
-  const data: [string, number][] = [];
-  for (let time = date; time < end; time += dayTime) {
-    data.push([
-      echarts.time.format(time, '{yyyy}-{MM}-{dd}', false),
-      Math.floor(Math.random() * 10000)
-    ]);
-  }
-  return data;
-}
+import 'echarts-wordcloud';
 
 @Component({
   selector: 'app-dashboard',
@@ -319,4 +305,47 @@ export class DashboardComponent {
     }
   };
 
+  chartOption8: EChartsOption = {
+    series: [{
+    type: 'wordCloud',
+    shape: 'circle',
+    sizeRange: [12, 60],
+    rotationRange: [-90, 90],
+    rotationStep: 45,
+    gridSize: 8,
+    drawOutOfBound: false,
+    layoutAnimation: true,
+
+    // Global text style
+    textStyle: {
+      fontFamily: 'sans-serif',
+      fontWeight: 'bold',
+      // Color can be a callback function or a color string
+      color: function () {
+        // Random color
+        return 'rgb(' + [
+          Math.round(Math.random() * 160),
+          Math.round(Math.random() * 160),
+          Math.round(Math.random() * 160)
+        ].join(',') + ')';
+      }
+    },
+    emphasis: {
+      focus: 'self',
+
+      textStyle: {
+        textShadowBlur: 10,
+        textShadowColor: '#333'
+      }
+    },
+
+    data: [
+      { name: 'Lorem', value: 100 },
+      { name: 'Ipsum', value: 80 },
+      { name: 'Dolor', value: 60 },
+      { name: 'Sit', value: 40 },
+      { name: 'Amet', value: 20 },
+    ]
+  }]
+};
 }
