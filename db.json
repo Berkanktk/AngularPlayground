@@ -1,37 +1,24 @@
 {
   "data": [
     {
-      "edit_history_tweet_ids": [
-        "1607904313673662464"
-      ],
       "id": "1607904313673662464",
-      "text": "Had a lot of fun participating in AoC this year! Huge thanks to @RealTryHackMe and all of the creators for making the tasks. https://t.co/cQBGPcgbRQ"
+      "text": "Had a lot of fun participating in AoC this year! Huge thanks to @RealTryHackMe and all of the creators for making the tasks. https://t.co/cQBGPcgbRQ",
+      "author": "Berkanktk"
     },
     {
-      "edit_history_tweet_ids": [
-        "1325116189199175680"
-      ],
       "id": "1325116189199175680",
-      "text": "AHASHAHS https://t.co/o5qFGapDjo"
+      "text": "AHASHAHS https://t.co/o5qFGapDjo",
+      "author": "Berkanktk"
     },
     {
-      "edit_history_tweet_ids": [
-        "1261711458452283392"
-      ],
       "id": "1261711458452283392",
-      "text": "Ben #TarihiYolculuk’taki yerimi aldım. Sen de hatıra biletini al, Atatürk’ün izinde bir rekora daha hep birlikte imza atalım! @TK_TR https://t.co/grnKMF2Us0"
+      "text": "Ben #TarihiYolculuk’taki yerimi aldım. Sen de hatıra biletini al, Atatürk’ün izinde bir rekora daha hep birlikte imza atalım! @TK_TR https://t.co/grnKMF2Us0",
+      "author": "Berkanktk"
     },
     {
-      "edit_history_tweet_ids": [
-        "1189923874688917507"
-      ],
       "id": "1189923874688917507",
-      "text": "❤️\uD83C\uDF32? We've got you covered x 20 million. https://t.co/Ki74wtAM9r #TeamTrees"
+      "text": "❤️\uD83C\uDF32? We've got you covered x 20 million. https://t.co/Ki74wtAM9r #TeamTrees",
+      "author": "Berkanktk"
     }
-  ],
-  "meta": {
-    "result_count": 4,
-    "newest_id": "1607904313673662464",
-    "oldest_id": "1189923874688917507"
-  }
+  ]
 }
