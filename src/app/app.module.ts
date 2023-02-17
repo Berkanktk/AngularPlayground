@@ -27,10 +27,12 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {NgxEchartsModule} from "ngx-echarts";
 
 const appRoutes: Routes = [
   { path: '', component: PostsComponent },
   { path: 'material', component: MaterialComponent },
+  { path: 'dashboard', component: DashboardComponent },
 ];
 
 
@@ -66,6 +68,9 @@ const appRoutes: Routes = [
     MatMenuModule,
     ReactiveFormsModule,
     MatTooltipModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts'),
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
