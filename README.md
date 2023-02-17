@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# NPM packages
+Add material UI
+`ng add @angular/material`
+
+Add echarts
+`npm i echarts`
+
+Add word cloud
+`npm i echarts-wordcloud`
+
+# Links
+[Material Components](https://material.angular.io/components/categories)  
+[Google Icons](https://fonts.google.com/icons)
+[Echarts Examples](https://echarts.apache.org/examples/en/index.html)
