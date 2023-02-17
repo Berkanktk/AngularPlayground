@@ -1,0 +1,70 @@
+.material-container {
+  margin: 10px;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.card {
+  padding: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.example-form mat-slide-toggle {
+  margin: 8px 0;
+  display: block;
+}
+
+.example-result-card h2 {
+  margin: 0 8px;
+}
+
+.example-label-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 10px 0;
+  max-width: 284px;
+}
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.mat-menu-content {
+  background-color: #f7f7f7;
+  font-size: 14px;
+}
+
+.mat-form-field + .mat-form-field,
+.mat-raised-button {
+  margin-left: 8px;
+}

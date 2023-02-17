@@ -1,0 +1,155 @@
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>OSINT tool</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button routerLink="/">
+    <mat-icon>home</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>search</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>notifications</mat-icon>
+  </button>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>settings</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>account_circle</mat-icon>
+      <span>My account</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Settings</span>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item>
+      <mat-icon>power_settings_new</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<div class="material-container">
+  <mat-card class="example-card">
+    <mat-card-header class="card">
+      <mat-card-title>Actions Buttons</mat-card-title>
+      <mat-card-subtitle>Lorem ipsum dolor...</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+  <div class="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Input</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Select</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Textarea</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </div>
+
+  <label id="example-radio-group-label">Pick your favorite season</label>
+  <mat-radio-group
+    aria-labelledby="example-radio-group-label"
+    class="example-radio-group"
+    [(ngModel)]="favoriteSeason">
+    <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+      {{season}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <div>Your favorite season is: {{favoriteSeason}}</div>
+
+  <p>Slide Toggle inside of a Template-driven form</p>
+
+  <form class="example-form" #form="ngForm" (ngSubmit)="alertFormValues(form.form)">
+
+    <mat-slide-toggle ngModel name="enableWifi">Enable Wifi</mat-slide-toggle>
+    <mat-slide-toggle ngModel name="acceptTerms" required>Accept Terms of Service</mat-slide-toggle>
+
+    <button mat-raised-button type="submit">Save Settings</button>
+  </form>
+
+  <mat-card class="example-result-card">
+    <mat-card-content>
+      <h2>Result</h2>
+
+      <div class="example-label-container">
+        <label id="example-name-label" class="example-name-label">Value</label>
+        <label class="example-value-label">{{value}}</label>
+      </div>
+      <mat-slider
+        class="example-margin"
+        [disabled]="disabled"
+        [max]="max"
+        [min]="min"
+        [step]="step"
+        [discrete]="thumbLabel"
+        [showTickMarks]="showTicks">
+        <input matSliderThumb [(ngModel)]="value">
+      </mat-slider>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<h3>No animation</h3>
+
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">insights</mat-icon>
+      First
+    </ng-template>
+    Content 1
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">bar_chart</mat-icon>
+      Second
+    </ng-template>
+    Content 2
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">query_stats</mat-icon>
+      Third
+    </ng-template>
+
+    Content 3
+  </mat-tab>
+</mat-tab-group>
+
+<mat-form-field class="example-user-input" appearance="fill">
+  <mat-label>Show delay</mat-label>
+  <input matInput type="number" [formControl]="showDelay"
+         aria-label="Adds a delay between hovering over the button and displaying the tooltip">
+  <mat-hint>milliseconds</mat-hint>
+</mat-form-field>
+
+<mat-form-field class="example-user-input" appearance="fill">
+  <mat-label>Hide delay</mat-label>
+  <input matInput type="number" [formControl]="hideDelay"
+         aria-label="Adds a delay between hovering away from the button and hiding the tooltip">
+  <mat-hint>milliseconds</mat-hint>
+</mat-form-field>
+
+<button mat-raised-button matTooltip="Info about the action"
+        [matTooltipShowDelay]="showDelay.value"
+        [matTooltipHideDelay]="hideDelay.value"
+        aria-label="Button that displays a tooltip with a customized delay in showing and hiding">
+  Action
+</button>
