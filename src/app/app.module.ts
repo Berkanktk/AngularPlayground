@@ -28,11 +28,14 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {NgxEchartsModule} from "ngx-echarts";
+import { MapComponent } from './components/map/map.component';
+import {LeafletModule} from "@asymmetrik/ngx-leaflet";
 
 const appRoutes: Routes = [
   { path: '', component: PostsComponent },
   { path: 'material', component: MaterialComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'map', component: MapComponent },
 ];
 
 
@@ -42,7 +45,8 @@ const appRoutes: Routes = [
     PostComponent,
     PostsComponent,
     MaterialComponent,
-    DashboardComponent
+    DashboardComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +75,7 @@ const appRoutes: Routes = [
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),
     }),
+    LeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]
