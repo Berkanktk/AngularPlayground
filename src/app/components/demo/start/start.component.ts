@@ -81,11 +81,6 @@ export class StartComponent implements OnInit {
   };
 
   chartOption3: EChartsOption = {
-    title: {
-      text: 'Referer of a Website',
-      subtext: 'Fake Data',
-      left: 'center'
-    },
     tooltip: {
       trigger: 'item'
     },
@@ -117,7 +112,6 @@ export class StartComponent implements OnInit {
   };
 
   chartOption4: EChartsOption = {
-    title: {'text': 'Scatter Plot'},
     xAxis: {'name': 'X'},
     yAxis: {'name': 'Y'},
     tooltip: {
@@ -158,9 +152,6 @@ export class StartComponent implements OnInit {
   };
 
   chartOption5: EChartsOption = {
-    title: {
-      text: 'Basic Radar Chart'
-    },
     legend: {
       data: ['Allocated Budget', 'Actual Spending']
     },
