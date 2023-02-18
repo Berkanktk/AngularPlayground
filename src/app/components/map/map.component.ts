@@ -93,7 +93,7 @@ export class MapComponent implements OnInit {
   }
 
   private addGeoJsonLayer() {
-    this.http.get<any>('../../../assets/GeoJSON/DK.json').subscribe(data => {
+    this.http.get<any>('assets/GeoJSON/DK.json').subscribe(data => {
       const geoJsonLayer = new GeoJSON(data, {
         pane: 'my-geojson-pane',
         style: function (feature) {
