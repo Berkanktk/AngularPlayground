@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service';
 import { Post } from '../../Post';
-
+import { POSTS } from '../../mock-posts';
 
 @Component({
   selector: 'app-posts',
@@ -10,6 +10,7 @@ import { Post } from '../../Post';
 })
 export class PostsComponent implements OnInit{
   posts: Post[] = [];
+  mockPosts: Post[] = POSTS
 
   constructor(private postService: PostService) {}
 
