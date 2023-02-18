@@ -80,8 +80,9 @@ export class MapComponent implements OnInit {
             iconSize: [40, 40],
             iconAnchor: [13, 41],
             iconUrl: 'assets/Icons/marker-pin.png',
-            shadowUrl: 'assets/marker-shadow.png',
-            shadowSize: [41, 41]}))
+            shadowUrl: 'assets/Icons/marker-shadow.png',
+            shadowSize: [41, 41],
+            shadowAnchor: [5, 41]}))
         .bindPopup('You marked the map at ' + event.latlng.toString());
       marker.addTo(this.map);
       marker.on('click', (event) => {
