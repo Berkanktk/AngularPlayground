@@ -11,7 +11,8 @@ export class StartComponent implements OnInit {
   posts = POSTS;
   @ViewChild('title') title: any;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
 
@@ -98,11 +99,11 @@ export class StartComponent implements OnInit {
         type: 'pie',
         radius: '50%',
         data: [
-          { value: 1048, name: 'Search Engine' },
-          { value: 735, name: 'Direct' },
-          { value: 580, name: 'Email' },
-          { value: 484, name: 'Union Ads' },
-          { value: 300, name: 'Video Ads' }
+          {value: 1048, name: 'Search Engine'},
+          {value: 735, name: 'Direct'},
+          {value: 580, name: 'Email'},
+          {value: 484, name: 'Union Ads'},
+          {value: 300, name: 'Video Ads'}
         ],
         emphasis: {
           itemStyle: {
@@ -166,12 +167,12 @@ export class StartComponent implements OnInit {
     radar: {
       // shape: 'circle',
       indicator: [
-        { name: 'Sales', max: 6500 },
-        { name: 'Administration', max: 16000 },
-        { name: 'Information Technology', max: 30000 },
-        { name: 'Customer Support', max: 38000 },
-        { name: 'Development', max: 52000 },
-        { name: 'Marketing', max: 25000 }
+        {name: 'Sales', max: 6500},
+        {name: 'Administration', max: 16000},
+        {name: 'Information Technology', max: 30000},
+        {name: 'Customer Support', max: 38000},
+        {name: 'Development', max: 52000},
+        {name: 'Marketing', max: 25000}
       ]
     },
     tooltip: {
@@ -347,39 +348,58 @@ export class StartComponent implements OnInit {
       },
 
       data: [
-        { name: 'Lorem', value: 100 },
-        { name: 'Ipsum', value: 80 },
-        { name: 'Dolor', value: 60 },
-        { name: 'Sit', value: 40 },
-        { name: 'Amet', value: 20 },
+        {name: 'Lorem', value: 100},
+        {name: 'Ipsum', value: 80},
+        {name: 'Dolor', value: 60},
+        {name: 'Sit', value: 40},
+        {name: 'Amet', value: 20},
       ]
     }]
   };
 
   tabGroup(e: any) {
     if (e.index === 0) {
-        this.title.nativeElement.textContent = 'Line Chart';
-      }
-    else if (e.index === 1) {
-        this.title.nativeElement.textContent = 'Bar Chart';
-      }
-    else if (e.index === 2) {
-        this.title.nativeElement.textContent = 'Pie Chart';
-      }
-    else if (e.index === 3) {
-        this.title.nativeElement.textContent = 'Scatter Plot';
-      }
-    else if (e.index === 4) {
-        this.title.nativeElement.textContent = 'Radar Chart';
-      }
-    else if (e.index === 5) {
-        this.title.nativeElement.textContent = 'Treemap';
-      }
-    else if (e.index === 6) {
-        this.title.nativeElement.textContent = 'Sunburst';
-      }
-    else if (e.index === 7) {
-        this.title.nativeElement.textContent = 'Word Cloud';
+      this.title.nativeElement.textContent = 'Line Chart';
+    } else if (e.index === 1) {
+      this.title.nativeElement.textContent = 'Bar Chart';
+    } else if (e.index === 2) {
+      this.title.nativeElement.textContent = 'Pie Chart';
+    } else if (e.index === 3) {
+      this.title.nativeElement.textContent = 'Scatter Plot';
+    } else if (e.index === 4) {
+      this.title.nativeElement.textContent = 'Radar Chart';
+    } else if (e.index === 5) {
+      this.title.nativeElement.textContent = 'Treemap';
+    } else if (e.index === 6) {
+      this.title.nativeElement.textContent = 'Sunburst';
+    } else if (e.index === 7) {
+      this.title.nativeElement.textContent = 'Word Cloud';
     }
+  }
+
+  openPopup(post: any) {
+    const popup = document.getElementById("popup");
+    const popupAuthor = document.getElementById("popup-author");
+    const popupPlatform = document.getElementById("popup-platform");
+    const popupText = document.getElementById("popup-text");
+    const popupFollowers = document.getElementById("popup-followers");
+    const popupLikes = document.getElementById("popup-likes");
+    const popupRetweets = document.getElementById("popup-retweets");
+    const popupReplies = document.getElementById("popup-replies");
+
+    popupAuthor!.innerHTML = post.author;
+    popupPlatform!.innerHTML = post.platform;
+    popupText!.innerHTML = post.text;
+    popupFollowers!.innerHTML = "Followers: " + post.followers;
+    popupLikes!.innerHTML = "Likes: " + post.likes;
+    popupRetweets!.innerHTML = "Retweets: " + post.retweets;
+    popupReplies!.innerHTML = "Replies: " + post.replies;
+
+    popup!.style.display = "block";
+  }
+
+  closePopup() {
+    const popup = document.getElementById("popup");
+    popup!.style.display = "none";
   }
 }

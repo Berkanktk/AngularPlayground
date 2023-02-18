@@ -63,6 +63,12 @@
   padding: 10px;
 }
 
+.card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+  transition: all 0.2s ease-in-out;
+}
+
 .posts {
   height: 576px;
   background-color: #fff;
@@ -75,4 +81,29 @@
 
 .chart-item {
   margin-top: 25px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 600px;
+  height: 400px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10px;
 }
