@@ -28,6 +28,9 @@
 }
 
 .box-lg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 498px;
   background-color: #fff;
   margin-bottom: 10px;
