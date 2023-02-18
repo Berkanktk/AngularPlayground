@@ -9,7 +9,6 @@ import 'echarts-wordcloud';
 })
 export class DashboardComponent {
 
-
   chartOption1: EChartsOption = {
     xAxis: {
       type: 'category',

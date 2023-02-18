@@ -22,7 +22,6 @@
   flex-direction: column;
   margin: 15px 0;
   align-items: flex-start;
-
 }
 
 .example-radio-button {
@@ -46,17 +45,6 @@
 }
 .mat-tab-group {
   margin-bottom: 48px;
-}
-
-.example-spacer {
-  flex: 1 1 auto;
-}
-
-mat-toolbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
 }
 
 .mat-menu-content {
