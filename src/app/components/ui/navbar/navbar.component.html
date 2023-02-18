@@ -1,9 +1,17 @@
 <mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button mat-icon-button class="example-icon" [matMenuTriggerFor]="demo">
     <mat-icon>menu</mat-icon>
   </button>
+  <mat-menu #demo="matMenu">
+    <button mat-menu-item routerLink="demo">
+      <mat-icon>grid_view</mat-icon>
+      <span>Demo</span>
+    </button>
+  </mat-menu>
+
   <span>OSINT tool</span>
   <span class="example-spacer"></span>
+
   <button mat-icon-button routerLink="/">
     <mat-icon>home</mat-icon>
   </button>
@@ -19,12 +27,13 @@
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>settings</mat-icon>
   </button>
+
   <mat-menu #menu="matMenu">
     <button mat-menu-item>
       <mat-icon>account_circle</mat-icon>
       <span>My account</span>
     </button>
-    <button mat-menu-item>
+    <button mat-menu-item>1
       <mat-icon>settings</mat-icon>
       <span>Settings</span>
     </button>
