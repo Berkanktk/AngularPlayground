@@ -30,9 +30,6 @@
 }
 
 .box-lg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 498px;
   background-color: #fff;
   margin-bottom: 10px;
@@ -46,16 +43,24 @@
   margin-bottom: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 40px;
 }
 
 .card {
   margin: 20px;
-  height: 75px;
-  display: flex;
+  height: auto;
   flex-direction: row;
   justify-content: space-between;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  display: block;
+  padding: 10px;
 }
 
 .posts {
@@ -66,4 +71,8 @@
   padding: 5px;
   overflow: auto;
   border-radius: 5px;
+}
+
+.chart-item {
+  margin-top: 25px;
 }

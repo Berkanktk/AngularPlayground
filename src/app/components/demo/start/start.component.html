@@ -5,21 +5,83 @@
     <div class="box-sm"></div>
     <div class="box-sm"></div>
   </div>
+
   <div class="column column2">
-    <div class="box-title"></div>
-    <div class="box-lg"></div>
+    <div class="box-title">
+      <div class="title" #title>Line Chart</div>
+    </div>
+    <div class="box-lg">
+      <mat-tab-group class="chart-container" (selectedTabChange)="tabGroup($event)">
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">insights</mat-icon>
+          </ng-template>
+          <div echarts [options]="chartOption1" class="chart-item"></div>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">bar_chart</mat-icon>
+          </ng-template>
+          <div echarts [options]="chartOption2" class="chart-item"></div>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">pie_chart</mat-icon>
+          </ng-template>
+          <div echarts [options]="chartOption3" class="chart-item"></div>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">scatter_plot</mat-icon>
+          </ng-template>
+          <div echarts [options]="chartOption4" class="chart-item"></div>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">radar</mat-icon>
+          </ng-template>
+          <div echarts [options]="chartOption5" class="chart-item"></div>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">account_tree</mat-icon>
+          </ng-template>
+          <div echarts [options]="chartOption6" class="chart-item"></div>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">data_usage</mat-icon>
+          </ng-template>
+          <div echarts [options]="chartOption7" class="chart-item"></div>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">cloud</mat-icon>
+          </ng-template>
+          <div echarts [options]="chartOption8" class="chart-item"></div>
+        </mat-tab>
+
+      </mat-tab-group>
+    </div>
     <div class="box-md"></div>
   </div>
+
   <div class="column column3">
     <div class="box-md"></div>
     <div class="posts">
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
+      <div class="card" *ngFor="let post of posts">
+        <mat-card-title>{{post.author}}</mat-card-title><br>
+        <mat-card-subtitle>{{post.platform}}</mat-card-subtitle><br>
+        <mat-card-content>{{ post.text }}</mat-card-content>
+      </div>
     </div>
   </div>
 </div>
