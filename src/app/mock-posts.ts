@@ -5,30 +5,50 @@ export const POSTS: Post[] = [
     id: 1607904313673662464,
     "text": "Had a lot of fun participating in AoC this year! Huge thanks to @RealTryHackMe and all of the creators for making the tasks. https://t.co/cQBGPcgbRQ",
     "author": "Berkanktk",
-    "platform": "Twitter"
+    "platform": "Twitter",
+    "followers": 43,
+    "likes": 153,
+    "retweets": 48,
+    "replies": 15,
   },
   {
     id: 1325116189199175680,
     "text": "AHASHAHS https://t.co/o5qFGapDjo",
     "author": "Berkanktk",
-    "platform": "Twitter"
+    "platform": "Twitter",
+    "followers": 43,
+    "likes": 153,
+    "retweets": 48,
+    "replies": 15,
   },
   {
     id: 1261711458452283392,
     text: "Ben #TarihiYolculuk’taki yerimi aldım. Sen de hatıra biletini al, Atatürk’ün izinde bir rekora daha hep birlikte imza atalım! @TK_TR https://t.co/grnKMF2Us0",
     "author": "Berkanktk",
-    "platform": "Twitter"
+    "platform": "Twitter",
+    "followers": 43,
+    "likes": 153,
+    "retweets": 48,
+    "replies": 15,
   },
   {
     id: 1189923874688917507,
     "text": "❤️\uD83C\uDF32? We've got you covered x 20 million. https://t.co/Ki74wtAM9r #TeamTrees",
     "author": "Berkanktk",
-    "platform": "Twitter"
+    "platform": "Twitter",
+    "followers": 43,
+    "likes": 153,
+    "retweets": 48,
+    "replies": 15,
   },
   {
     id: 1189923874688917507,
     "text": "Hello world!!",
     "author": "Berkanktk",
-    "platform": "Twitter"
+    "platform": "Twitter",
+    "followers": 43,
+    "likes": 153,
+    "retweets": 48,
+    "replies": 15,
   },
 ];

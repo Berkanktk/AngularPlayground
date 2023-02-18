@@ -3,4 +3,8 @@ export interface Post {
   text: string;
   author: string;
   platform?: string;
+  followers?: number;
+  likes?: number;
+  retweets?: number;
+  replies?: number;
 }
