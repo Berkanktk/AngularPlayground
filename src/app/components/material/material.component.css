@@ -56,3 +56,11 @@
 .mat-raised-button {
   margin-left: 8px;
 }
+
+mat-tab-group {
+  width: 75%;
+}
+
+.example-result-card {
+  width: 75%;
+}
