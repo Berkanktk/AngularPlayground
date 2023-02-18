@@ -31,12 +31,14 @@ import {NgxEchartsModule} from "ngx-echarts";
 import { MapComponent } from './components/map/map.component';
 import {LeafletModule} from "@asymmetrik/ngx-leaflet";
 import { NavbarComponent } from './components/ui/navbar/navbar.component';
+import { DemoComponent } from './components/demo/demo.component';
 
 const appRoutes: Routes = [
   { path: '', component: PostsComponent },
   { path: 'material', component: MaterialComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'map', component: MapComponent },
+  { path: 'demo', component: DemoComponent },
 ];
 
 
@@ -48,7 +50,8 @@ const appRoutes: Routes = [
     MaterialComponent,
     DashboardComponent,
     MapComponent,
-    NavbarComponent
+    NavbarComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
