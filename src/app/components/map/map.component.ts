@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {latLng, MapOptions, tileLayer, Map, Marker, icon, CircleMarker, Polygon, popup} from 'leaflet';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import {latLng, MapOptions, tileLayer, Map, Marker, icon, CircleMarker, Polygon, GeoJSON} from 'leaflet';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-map',
@@ -10,12 +12,14 @@ export class MapComponent implements OnInit {
 
   map!: Map;
   mapOptions!: MapOptions;
+  place!: string;
 
-  constructor() {
+  constructor(private http: HttpClient, private changeDetectorRef: ChangeDetectorRef) {
   }
 
   ngOnInit() {
     this.initializeMapOptions();
+    this.addGeoJsonLayer();
   }
 
   onMapReady(map: Map) {
@@ -45,11 +49,11 @@ export class MapComponent implements OnInit {
         icon({
           iconSize: [25, 41],
           iconAnchor: [13, 41],
-          iconUrl: 'assets/marker-icon.png',
-          shadowUrl: 'assets/marker-shadow.png',
+          iconUrl: 'assets/Icons/marker-icon.png',
+          shadowUrl: 'assets/Icons/marker-shadow.png',
           shadowSize: [41, 41]
-        })),
-      popup = marker.bindPopup('TEK');
+        }))
+      .bindPopup('TEK');
     marker.addTo(this.map);
 
     const marker2 = new CircleMarker([56.15177650929469, 10.17715728097641])
@@ -64,7 +68,7 @@ export class MapComponent implements OnInit {
       [55.389676560148864, 10.4050130962468],
       [55.390290927843864, 10.404753895989083]])
       .setStyle({color: 'blue'})
-      .bindPopup('Kragsjergløkke Kollegiet');
+    marker3.bindPopup('Kragsjergløkke Kollegiet');
     marker3.addTo(this.map);
   }
 
@@ -75,10 +79,10 @@ export class MapComponent implements OnInit {
           icon({
             iconSize: [40, 40],
             iconAnchor: [13, 41],
-            iconUrl: 'assets/marker-pin.png',
+            iconUrl: 'assets/Icons/marker-pin.png',
             shadowUrl: 'assets/marker-shadow.png',
             shadowSize: [41, 41]}))
-      marker.bindPopup('You marked the map at ' + event.latlng.toString());
+        .bindPopup('You marked the map at ' + event.latlng.toString());
       marker.addTo(this.map);
       marker.on('click', (event) => {
         this.map.removeLayer(marker);
@@ -86,4 +90,41 @@ export class MapComponent implements OnInit {
       marker.openPopup();
     });
   }
+
+  private addGeoJsonLayer() {
+    this.http.get<any>('../../../assets/GeoJSON/DK.json').subscribe(data => {
+      const geoJsonLayer = new GeoJSON(data, {
+        pane: 'my-geojson-pane',
+        style: function (feature) {
+          return {
+            fillColor: '#ff7800',
+            weight: 2,
+            opacity: 1,
+            color: 'white',
+            dashArray: '3',
+            fillOpacity: 0.2
+          };
+        },
+        onEachFeature: (feature, layer) => {
+          layer.on({
+            mouseover: (e) => {
+              const layer = e.target;
+              //layer.bindPopup(feature.properties.NAME_2).openPopup();
+              this.place = feature.properties.NAME_2;
+              this.changeDetectorRef.detectChanges();
+            },
+            mouseout: (e) => {
+              const layer = e.target;
+              layer.unbindPopup();
+              this.place = '';
+              this.changeDetectorRef.detectChanges();
+            }
+          });
+        }
+      });
+
+    this.map.createPane('my-geojson-pane').style.zIndex = String(200);
+    geoJsonLayer.addTo(this.map);
+  })}
+
 }
